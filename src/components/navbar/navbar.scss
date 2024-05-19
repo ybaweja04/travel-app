@@ -1,0 +1,117 @@
+:root {
+    --main-color: #42A7C3;
+    --text-color: #333333;
+    --dark-blue: #007696;
+    --body-color: white;
+    --linear-color: #99E5FC;
+    --input-color: #9AD0DF;
+}
+
+.toggleNavbar {
+    display: none; /* Initially hidden */
+}
+
+.closeNavbar {
+    display: none;
+}
+
+header {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem 5rem;
+    background: #99E5FC;
+    box-shadow: 0 0 10px rgba($color: #000000, $alpha: 1.0);
+
+    .logo {
+        color: var(--dark-blue);
+    }
+
+    .navLink {
+        color: var(--text-color);
+        text-decoration: none;
+        margin-right: 2rem;
+    }
+    .navLink:hover{
+    color: var(--dark-blue);
+    }
+    @media screen and (max-width: 846px) {
+        .toggleNavbar {
+            display: flex;
+            align-items: center;
+            font-size: 25px;
+            color: var(--dark-blue);
+        }
+
+        .navbar {
+            position: absolute;
+            background: var(--body-color);
+            height: max-content;
+            width: 80%;
+            border-radius: 1rem;
+            top: -500rem; /* Initially hidden */
+            left: 50%;
+            transform: translate(-50%);
+            z-index: 2000;
+            box-shadow: 0 2px 4px rgba(2, 15, 29, 0.904);
+            transition: 0.5s ease-in-out;
+
+            .navList {
+                display: flex;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                margin: auto;
+                padding: 0.5rem 0;
+                gap: 1rem; /* Add gap between nav items */
+
+                .navItem {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    padding: 0.5rem 0;
+
+                    .navLink {
+                        color: var(--text-color);
+                        font-size: 0.9rem;
+                        font-weight: 500;
+                        margin-bottom: 1rem;
+                        text-align: center; /* Center text */
+                    }
+                }
+
+                button {
+                    margin-top: 1rem;
+                    margin-right: 1.5rem;
+
+                    a {
+                        font-weight: 600;
+                        color: var(--body-color);
+                        text-decoration: none;
+                    }
+                }
+            }
+
+            .closeNavbar {
+                display: flex;
+                position: absolute;
+                top: 1rem;
+                right: 1.5rem;
+                color: var(--dark-blue);
+                cursor: pointer;
+            }
+        }
+
+        .activeNavbar {
+            top: 7rem; 
+        }
+    }
+}
+
+

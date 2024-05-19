@@ -1,0 +1,106 @@
+:root {
+  --main-color: #42A7C3;
+  --text-color: #333333;
+  --dark-blue: #007696;
+  --body-color: white;
+  --linear-color: #99E5FC;
+  --input-color: #9AD0DF;
+}
+
+.toggleNavbar {
+  display: none; /* Initially hidden */
+}
+
+.closeNavbar {
+  display: none;
+}
+
+header {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 1000;
+  padding: 1rem 5rem;
+  background: #99E5FC;
+  box-shadow: 0 0 10px black;
+}
+header .logo {
+  color: var(--dark-blue);
+}
+header .navLink {
+  color: var(--text-color);
+  text-decoration: none;
+  margin-right: 2rem;
+}
+header .navLink:hover {
+  color: var(--dark-blue);
+}
+@media screen and (max-width: 846px) {
+  header .toggleNavbar {
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    color: var(--dark-blue);
+  }
+  header .navbar {
+    position: absolute;
+    background: var(--body-color);
+    height: -moz-max-content;
+    height: max-content;
+    width: 80%;
+    border-radius: 1rem;
+    top: -500rem; /* Initially hidden */
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 2000;
+    box-shadow: 0 2px 4px rgba(2, 15, 29, 0.904);
+    transition: 0.5s ease-in-out;
+  }
+  header .navbar .navList {
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    padding: 0.5rem 0;
+    gap: 1rem; /* Add gap between nav items */
+  }
+  header .navbar .navList .navItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0.5rem 0;
+  }
+  header .navbar .navList .navItem .navLink {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    text-align: center; /* Center text */
+  }
+  header .navbar .navList button {
+    margin-top: 1rem;
+    margin-right: 1.5rem;
+  }
+  header .navbar .navList button a {
+    font-weight: 600;
+    color: var(--body-color);
+    text-decoration: none;
+  }
+  header .navbar .closeNavbar {
+    display: flex;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    color: var(--dark-blue);
+    cursor: pointer;
+  }
+  header .activeNavbar {
+    top: 7rem;
+  }
+}/*# sourceMappingURL=navbar.css.map */
